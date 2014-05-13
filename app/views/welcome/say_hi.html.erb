@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>Site Map page</title>
+   <link rel="stylesheet" href="sitemap.css">
+  <style type="text/css">
+  body {
+  	padding-left: 11em;
+  	font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: black;
+    background-color: #ffd310}
+    
+     h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif;
+          color: white;
+          font-size: 100px }
+      img {
+        position: relative;
+        float: right;
+        width: 85%;
+      }
+      a {
+      	color: white
+      }
+       address {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: thin dotted }
+  </style>
+</head>
+
+<body>
+
+<h1>
+	<% if @say_hi_password == 'bigboss' %>
+	Hi there big boss! 
+	<% else %>
+	Howdy gentle viewer!
+	<% end %>
+</h1>
+
+	Do you want to access administrative pages? Click <a href="http://0.0.0.0:3000/admin/page_one">&nbsp;here&nbsp;</a>for admin menu or<a href="http://0.0.0.0:3000/admin/page_two">&nbsp;here&nbsp;</a>for contacts and/or messages.
+
+
+<br><br>
+Now choose a color scheme for your viewing experience:<br><br><br>
+
+Original yellow = Great choice. I'll stick with it!<br><br>
+
+I am feeling blue today. Make this site over!<br><br>
+
+Its gray all the way. Color is overrated!<br><br><br><br>
+
+Enter your color choice by typing in the color name: (yellow, blue or gray)<br><br>
+  <%= form_tag ("/say_hi") do %>
+  <%= text_field_tag 'my_color',"Insert color name here" %>
+  <%= submit_tag 'Submit' %>
+
+<% end %>
+
+<h6>
+<% if session['color'] == 'blue' %>
+	<style>
+  body {
+    background-color: #77BBBA}
+    </style>
+	<% elsif session['color'] == 'gray' %>
+	<style>
+  body {
+    background-color: #A9A9A9}
+    </style>
+	<% else %>
+	<% end %>
+</h6>	
+
+<address>Wanna go to site map? Click <a href="http://0.0.0.0:3000/sitemap/">here.</a></address>
+
+</body>
+</html>

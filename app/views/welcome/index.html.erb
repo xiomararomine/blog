@@ -17,7 +17,9 @@
           color: white;
           font-size: 100px }
       img {
-      	margin-top: 0px
+        position: relative;
+        float: right;
+        width: 85%;
       }
       a {
       	color: white
@@ -39,10 +41,27 @@
 <p>Artist. Designer. Coder.</p>
 <img src="http://i297.photobucket.com/albums/mm215/5fingersUp/welcomimage_zps672ca160.jpg" border="0" alt=" photo welcomimage_zps672ca160.jpg" align="right"/>
 
+
 <!-- Sign and date the page, it's only polite! -->
 <address>Get to know me.<br>
 	
-  Start <a href="http://0.0.0.0:3000/sitemap/">here.</a></address>
+  Start <a href="http://0.0.0.0:3000/sitemap/">here.</a></address><br>
+
+  <% if user_signed_in? && current_user.admin %>
+  (Hi there Admin)
+  <% end %>
+
+
+  <% if user_signed_in? && !current_user.admin %>
+
+
+  <%= form_tag ("/say_hi") do %>
+  <%= text_field_tag 'my_password',"Your Admin Password" %>
+  <%= submit_tag 'Submit' %>
+  <% end %>
+<% end %>
+
+
 </body>
 </html>
 

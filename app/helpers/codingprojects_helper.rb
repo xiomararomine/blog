@@ -1,0 +1,2 @@
+module CodingprojectsHelper
+end

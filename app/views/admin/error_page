@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Site Map page</title>
+   <link rel="stylesheet" href="sitemap.css">
+  <style type="text/css">
+  body {
+  	padding-left: 11em;
+  	font-family: Georgia, "Times New Roman",
+          Times, serif;
+    color: black;
+    background-color: #ffd310}
+    
+     h1 {
+    font-family: Helvetica, Geneva, Arial,
+          SunSans-Regular, sans-serif;
+          color: white;
+          font-size: 100px }
+      img {
+      	margin-top: 0px
+      }
+      a {
+      	color: white
+      }
+       address {
+    margin-top: 1em;
+    padding-top: 1em;
+    border-top: thin dotted }
+  </style>
+</head>
+
+<body>
+
+<!-- Main content -->
+<h1>Error. Error. Error.</h1>
+<h3>You are not an administrator... you silly goose. Now go and enjoy the rest of the site!</h3>
+
+<address>Wanna go back to site map? Click <a href="http://0.0.0.0:3000/sitemap/">here.</a></address>
+
+
+
+<!-- Sign and date the page, it's only polite! -->
+
+</body>
+</html>
+
+
+
