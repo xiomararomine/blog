@@ -1,5 +1,7 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_filter :admin_user
 
   # GET /images
   # GET /images.json
@@ -19,6 +21,12 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+  end
+
+  def admin_user
+    if current_user.admin != true
+      redirect_to(welcome_path, alert: "Sorry... Your not an admin!")
+    end
   end
 
   # POST /images

@@ -14,7 +14,7 @@ class AdminController < ApplicationController
 
   def admin_user
   	if current_user.admin != true
-  		redirect_to(welcome_page_path, alert: "Your not an admin")
+  		redirect_to(welcome_path, alert: "Sorry... Your not an admin!")
   	end
   end
  end

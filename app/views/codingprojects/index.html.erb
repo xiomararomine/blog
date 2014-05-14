@@ -36,7 +36,11 @@
 
 <address>Wanna go back to site map? Click <a href="http://0.0.0.0:3000/sitemap/">here.</a></address>
 
-
+<% @projects.each do |project_record| %>
+  <%= image_tag(project_record.file_name) %>
+  <%= project_record.name %>
+  <%= project_record.description %>
+  <% end %>
 
 <!-- Sign and date the page, it's only polite! -->
 
